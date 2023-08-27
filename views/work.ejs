@@ -1,0 +1,42 @@
+<%- include("partials/header.ejs") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>Y-ToDo</title>
+</head>
+<body>
+    <div class="container">
+        <div class="add_task_box">
+            <form action="/addWorkTask" method="POST">
+                <label for="enterNewTask">Task: </label>
+                <input type="text" placeholder="Enter task here..." name="newtask" />
+                <button type="submit" id="addNewTaskButton" ><i class="fas fa-plus"></i></button>
+            </form>
+        </div>
+        <div class="taskListBox">
+            <ul class="list-group list-group-flush">
+                <% for (var i = 0; i < workTasks.length; ++i) { %>
+                    <li class="task"><button id="tickOffBtn">done</button> <%= workTasks[i] %></li>
+                    <% } %>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let tickOffBtn = document.getElementById("tickOffBtn")
+        let listItem = document.querySelector(".task")
+
+        function tickOffTask() {
+            listItem.classList.toggle("checked")
+            console.log("clicked")
+        }
+
+        tickOffBtn.addEventListener('click', tickOffTask)
+    </script>
+</body>
+</html>
+
+<%- include("partials/footer.ejs") %>
