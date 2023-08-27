@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "To Do app with node js, express js and ejs",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
