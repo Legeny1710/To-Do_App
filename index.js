@@ -11,7 +11,7 @@ app.use(express.static("public"))
 app.use(express.urlencoded({extended: true}))
 
 app.get("/", (req, res) => {
-    res.render("days.ejs", {daysTasks: daysTasks})
+    res.render("home.ejs")
 })
 
 

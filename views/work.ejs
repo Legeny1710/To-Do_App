@@ -12,29 +12,31 @@
     <div class="container">
         <div class="add_task_box">
             <form action="/addWorkTask" method="POST">
-                <label for="enterNewTask">Task: </label>
-                <input type="text" placeholder="Enter task here..." name="newtask" />
-                <button type="submit" id="addNewTaskButton" ><i class="fas fa-plus"></i></button>
+                <input type="text" placeholder="Enter task here..." name="newtask" id="new-task-input"/>
+                <button type="submit" id="addNewTaskButton" >Add Task</button>
             </form>
         </div>
         <div class="taskListBox">
-            <ul class="list-group list-group-flush">
+            <ul class="taskList">
                 <% for (var i = 0; i < workTasks.length; ++i) { %>
-                    <li class="task"><button id="tickOffBtn">done</button> <%= workTasks[i] %></li>
+                    <li class="task"><button class="tickOffBtn"> ✔</button> <p class="taskName"><%= workTasks[i] %></p</li>
                     <% } %>
             </ul>
         </div>
     </div>
     <script>
-        let tickOffBtn = document.getElementById("tickOffBtn")
-        let listItem = document.querySelector(".task")
+        let tickOffBtn = document.querySelectorAll(".tickOffBtn")
+        let listItem = document.querySelectorAll(".taskName")
 
-        function tickOffTask() {
-            listItem.classList.toggle("checked")
+        function tickOffTask(index) {
+            listItem[index].classList.toggle("checked")
             console.log("clicked")
+          
         }
-
-        tickOffBtn.addEventListener('click', tickOffTask)
+        for (let i = 0; i <tickOffBtn.length; i++) {
+            tickOffBtn[i].addEventListener('click', () => tickOffTask(i))
+        }
+        //tickOffBtn.addEventListener('click', tickOffTask)
     </script>
 </body>
 </html>
