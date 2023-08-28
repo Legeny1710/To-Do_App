@@ -25,12 +25,13 @@ li {
     0 #fff;
     color: #05161A;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding: 1rem;
     gap: 15px;
 
 
 }
+
 
 
 #new-task-input {
@@ -52,8 +53,14 @@ li {
 
 .taskListBox {
   display: flex;
-  justify-content: space-evenly ;
+	justify-content: center;
   align-items: center;
+	background-color: var(--darkest);
+	padding: 1rem;
+	border-radius: 1rem;
+	margin-bottom: 1rem;
+  width: 100%;
+  margin: 1rem;
 }
 
 #addNewTaskButton{
@@ -61,7 +68,7 @@ li {
   font-size: 1.25rem;
   font-weight: 700;
   background-color: #3586ff;
-  border-radius: 10px;
+  border-radius: 20px;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 1rem;
@@ -70,6 +77,7 @@ li {
   border: none;
   cursor: pointer;
   transition: 0.4s;
+  margin-top: 1rem;
 }
 
 #addNewTaskButton:hover {
@@ -85,19 +93,14 @@ li {
   margin-right: 1rem;
   background-color: #3586ff;
   color: whitesmoke;
-  border-radius: 50%;
+  border-radius: 30%;
   outline: none;
   border: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.taskList {
-  color: #05161A;
-  margin-top: 1rem;
- 
-}
 
 
 .task {
@@ -105,11 +108,18 @@ li {
   background-color: #fff;
   display: flex;
 	justify-content: start;
-	border-radius:2rem;
-	margin-bottom: 1rem;
+	border-radius: 0;
+  width: 600px;
+  margin-bottom: -1rem;
+  padding: 1rem;
+  padding-right: 1rem;
 }
 
-
+.taskList{ 
+  display: flex;
+  justify-content: space-around;
+  background: 400px;
+}
 
 .speacialWord {
   color: #3586ff;
@@ -158,9 +168,6 @@ form {
   font-family: "Poppins", sans-serif;
 }
 
-i {
-  margin-right: 10px;
-}
 /*----------bootstrap-navbar-css------------*/
 .navbar-logo {
   padding: 15px;

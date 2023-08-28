@@ -9,6 +9,9 @@
     <title>Y-ToDo</title>
 </head>
 <body>
+    <div class="title">
+        <h1>Work</h1>
+    </div>
     <div class="container">
         <div class="add_task_box">
             <form action="/addWorkTask" method="POST">
@@ -17,7 +20,7 @@
             </form>
         </div>
         <div class="taskListBox">
-            <ul class="taskList">
+            <ul class="list-group list-group-flush">
                 <% for (var i = 0; i < workTasks.length; ++i) { %>
                     <li class="task"><button class="tickOffBtn"> ✔</button> <p class="taskName"><%= workTasks[i] %></p</li>
                     <% } %>
